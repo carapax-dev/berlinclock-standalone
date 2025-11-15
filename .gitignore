@@ -1,0 +1,49 @@
+# IDE
+/.idea/
+*.iml
+.settings/
+.classpath
+.project
+
+# Build outputs
+/out/
+/target/
+backend/target/
+bin/
+
+# OS files
+.DS_Store
+
+# Compiled files
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Environment files
+.env*
+!.env.example
+
+# Security files
+*.key
+*.pem
+*.pfx
+*.p12
+*.jks
+*.keystore
+
+# Secrets directories
+secrets/
+.secrets/
+credentials/
+
+# SSL certificates
+*.crt
+*.cer
+ssl/

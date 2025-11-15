@@ -1,0 +1,81 @@
+.app-footer {
+  background: linear-gradient(180deg, #1a252f 0%, #0d1419 100%);
+  color: #95a5a6;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  margin: 0;
+  color: #95a5a6;
+}
+
+.footer-github {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #95a5a6;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.footer-github:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.github-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-icon svg {
+  display: block;
+}
+
+.github-text {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    color: #95a5a6;
+  }
+
+  .footer-copyright a {
+      font-size: 12px;
+      color: #3facb3;
+  }
+
+  .footer-github {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}

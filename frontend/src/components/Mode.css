@@ -1,0 +1,239 @@
+.mode-container {
+  min-height: calc(100vh - 100px);
+  padding: 20px;
+  padding-bottom: 140px; /* Space for sticky menu and footer */
+}
+
+.mode-title {
+  text-align: center;
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.mode-description {
+  text-align: center;
+  color: #d9dcdc;
+  margin-bottom: 30px;
+  font-size: 16px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loading,
+.error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+}
+
+.error-message {
+  color: #e74c3c;
+  background: #fadbd8;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.loading {
+  color: #3498db;
+}
+
+/* Convert Mode Styles */
+.input-group {
+  display: flex;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.time-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 20px;
+  font-size: 18px;
+  border: 2px solid #bdc3c7;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  transition: border-color 0.3s;
+}
+
+.time-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.time-selector-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 30px;
+  flex-wrap: wrap;
+}
+
+.time-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-selector label {
+  font-size: 14px;
+  color: #d9dcdc;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.time-selector select {
+  padding: 12px 16px;
+  font-size: 24px;
+  font-family: 'Courier New', monospace;
+  border: 2px solid #bdc3c7;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 80px;
+  text-align: center;
+}
+
+.time-selector select:hover {
+  border-color: #3498db;
+}
+
+.time-selector select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.time-separator {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-top: 20px;
+}
+
+.convert-button,
+.decode-button,
+.reset-button {
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.convert-button,
+.decode-button {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+}
+
+.convert-button:hover,
+.decode-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.reset-button {
+  background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+  color: white;
+}
+
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(149, 165, 166, 0.4);
+}
+
+.result-container {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Decode Mode Styles */
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.decoded-result {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.decoded-result h3 {
+  color: #2c3e50;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.decoded-time {
+  font-size: 56px;
+  font-weight: bold;
+  color: #ecf0f1;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 8px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .mode-title {
+    font-size: 24px;
+  }
+
+  .mode-description {
+    font-size: 14px;
+  }
+
+  .time-input,
+  .convert-button,
+  .decode-button,
+  .reset-button {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .decoded-time {
+    font-size: 36px;
+    letter-spacing: 4px;
+    padding: 15px 25px;
+  }
+}
