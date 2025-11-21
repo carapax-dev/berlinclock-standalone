@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           © {currentYear} Carapax Software. Licensed under the <a href="https://www.mozilla.org/en-US/MPL/2.0/" target="_blank" rel="noopener noreferrer">MPL-2.0 License</a>
         </p>
         <a
-          href="https://github.com/carapax-dev/berlinclock"
+          href="https://github.com/carapax-dev/berlinclock-standalone"
           target="_blank"
           rel="noopener noreferrer"
           className="footer-github"

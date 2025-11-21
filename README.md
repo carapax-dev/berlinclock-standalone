@@ -16,37 +16,60 @@ A full-stack implementation of the famous Berlin Clock (Mengenlehreuhr) - the un
 
 ## Quick Start
 
+Choose one of the following methods to run the application:
+
+## Option 1: Run with Docker Compose (Recommended)
+
+The easiest way to run the entire application. No need to install Java, Maven, or Node.js locally.
+
 ### Prerequisites
-
-- **Java 17** or higher
-- **Maven 3.6+**
-- **Node.js 18+** and **npm**
-
-Or alternatively:
 
 - **Docker** and **Docker Compose**
 
-## Option 1: Run Locally (Recommended for Development)
-
-### 1. Clone the Repository
+### Steps
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/berlinclock-standalone.git
-cd berlinclock-standalone
+# Start both backend and frontend
+docker compose up --build
+
+# Or run in detached mode
+docker compose up -d --build
 ```
 
-### 2. Start Backend (Spring Boot)
+Access the application:
+- **Frontend**: http://localhost
+- **Backend API**: http://localhost:8080/api/time
+
+To stop the containers:
+
+```bash
+docker compose down
+```
+
+## Option 2: Run Locally with Maven (Development Mode)
+
+For local development without Docker.
+
+### Prerequisites
+
+- **Java 17** or higher
+- **Maven 3.6+** (installed separately, NOT mvnw)
+- **Node.js 18+** and **npm**
+
+### Steps
+
+### 1. Start Backend (Spring Boot)
 
 Open a terminal and run:
 
 ```bash
 cd backend
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 The backend API will be available at **http://localhost:8080**
 
-### 3. Start Frontend (React + Vite)
+### 2. Start Frontend (React + Vite)
 
 Open another terminal and run:
 
@@ -58,29 +81,9 @@ npm run dev
 
 The frontend will be available at **http://localhost:5173**
 
-### 4. Access the Application
+### 3. Access the Application
 
 Open your browser and navigate to **http://localhost:5173**
-
-## Option 2: Run with Docker Compose
-
-The easiest way to run the entire application:
-
-```bash
-# Start both backend and frontend
-docker-compose up --build
-
-# Or run in detached mode
-docker-compose up -d --build
-```
-
-Access the application at **http://localhost**
-
-To stop the containers:
-
-```bash
-docker-compose down
-```
 
 ## How the Berlin Clock Works
 
@@ -145,7 +148,7 @@ curl -X POST http://localhost:8080/api/time/decode \
 
 ```bash
 cd backend
-./mvnw test
+mvn test
 ```
 
 All 51 tests should pass, including:
@@ -164,7 +167,7 @@ npm test
 
 ```bash
 cd backend
-./mvnw clean test jacoco:report
+mvn clean test jacoco:report
 ```
 
 View the coverage report at: `backend/target/site/jacoco/index.html`
@@ -172,14 +175,13 @@ View the coverage report at: `backend/target/site/jacoco/index.html`
 ## Project Structure
 
 ```
-berlinclock-standalone/
+berlinclock-project/
 ├── backend/                   # Spring Boot backend
 │   ├── src/
 │   │   ├── main/java/        # Application code
 │   │   └── test/java/        # Tests
 │   ├── pom.xml               # Maven configuration
-│   ├── Dockerfile            # Backend Docker image
-│   └── mvnw                  # Maven wrapper
+│   └── Dockerfile            # Backend Docker image (uses Maven)
 ├── frontend/                 # React + TypeScript frontend
 │   ├── src/
 │   │   ├── components/       # React components

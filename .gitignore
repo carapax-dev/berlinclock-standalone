@@ -28,7 +28,6 @@ frontend/.vite/
 
 # Environment files
 .env*
-!.env.example
 
 # Security files
 *.key
